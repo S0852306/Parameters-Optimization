@@ -139,6 +139,6 @@ def OptimizationSolver(p0,Observe,Dynamics,Solver,MaxIter,**kwargs):
         p, CostList = ADAM(p0,MaxIter,s0,Dynamics,Observe)
     if Solver=='BFGS':
         p, CostList = QuasiNewton(p0,MaxIter,Dynamics,Observe)
-    if Solver!='ADAM' or Solver!='BFGS':
+    if Solver!='ADAM' and Solver!='BFGS':
         print('Non-exist solver name, Solver options: ADAM, BFGS ')
     return p, CostList
